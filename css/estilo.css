@@ -5,31 +5,12 @@
 	margin-right: 0;
 }
 
-/*-- VITRINE DE FILMES ---------------------*/
-.filmeEmDestaque .card:hover{
+/*-- VITRINE DE PRODUTOS ---------------------*/
+.produtoEmDestaque .card:hover{
 	background-color: #eee;
 }
 
-/*-- FIM DA VITRINE DE FILMES ---------------------*/
-
-
-/*-- BANNER DOS DIRETORES ---------------------*/
-#bannerDiretores{
-	max-width: 800px;
-}
-#bannerDiretores li{
-	background-color: black;
-}
-
-/*-- FIM DO BANNER DOS DIRETORES ---------------------*/
-
-
-/*-- INÍCIO DOS ATORES POPULARES ---------------------*/
-
-/*-- FIM DOS ATORES POPULARES ---------------------*/
-
-
-/*-- FIM DO PRINCIPAL ---------------------*/
+/*-- FIM DA VITRINE DE PRODUTOS ---------------------*/
 
 /* RODAPÉ */
 
@@ -51,40 +32,6 @@
 }
 /* FIM DO RODAPÉ */
 
-
-
-/* -----------------------  ADMINISTRACAO  ------------------------- */
-
-.administracao{
-	background-color: black;
-}
-
-.administracao main{
-	background-color: white;
-	min-height: 600px;
-}
-.opcoes{
-	border: 5px groove transparent;
-}
-.opcoes i{
-	font-size: 60px;
-	width: 100%;
-}
-.opcoes p{
-	font-size: 24px;
-}
-.opcoes a{
-	text-decoration: none;
-
-}
-.opcoes a:hover{
-	color: red;
-}
-.opcoes:hover{
-	border: 5px inset lightgray;
-	border-radius: 10px;
-	background-color: #fafafa;
-}
 
 /* ---------  MENU LATERAL ADM  ------------- */
 
@@ -121,8 +68,6 @@
 	font-size: 24px;
 }
 
-/* ---------  FIM DO MENU LATERAL ADM  ------------- */
-
 /*  ---------------- ITENS -------------------- */
 .itensCadastrados{
 	border: 2px solid lightgray;
@@ -134,4 +79,10 @@
 }
 
 
-/* -----------------------  FIM DA ADMINISTRACAO  ------------------------- */
+.controles img{
+	max-width: 100px;
+}
+
+.descricao{
+	font-size: 24px;
+}

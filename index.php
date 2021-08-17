@@ -3,6 +3,7 @@
 <head>
 	<?php
 		include_once "header.html";
+		include_once "dados/dados.php";
 	?>
 
 	<title>Home</title>
@@ -12,14 +13,64 @@
 
 	<!-- MENU SUPERIOR --------------------->
 
-	<?php include_once "menuSuperior.html";	?>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuSuperior"
+		aria-controls="menuSuperior" aria-expanded="false" aria-label="Toggle navigation">
+		<i class="fas fa-bars"></i>
+		</button>
+			<div id="menuSuperior" class="collapse navbar-collapse">
+				<a href="index.php" class="navbar-brand">Bolos, Doces & Cia</a>
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item"><a class="nav-link" href="pages/produtos.php">Produtos</a></li>
+					<li class="nav-item"><a class="nav-link" href="pages/quem_somos.php">Quem Somos</a></li>
+					<li class="nav-item"><a class="nav-link" href="pages/contato.php">Contato</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 	<!-- FIM DO MENU SUPERIOR --------------------->
 
 
 	<!-- BANNER --------------------->
 
-	<?php include_once "banner.php";	?>
+	<div id="meuBanner" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<a href="#">
+					<img src="images/banner/1.jpg" class="d-block w-100" alt="Banner de boas-vindas">
+				</a>
+			</div>
+			<div class="carousel-item">
+				<a href="#">
+					<img src="images/banner/2.jpg" class="d-block w-100" alt="Banner de boas-vindas">
+				</a>
+			</div>
+			<div class="carousel-item">
+				<a href="#">
+					<img src="images/banner/3.jpg" class="d-block w-100" alt="Banner de boas-vindas">
+				</a>
+			</div>
+		</div>
+		<!-- INDICADORES -->
+		<ol class="carousel-indicators">
+			<li data-target="#meuBanner" data-slide-to="0" class="active"></li>
+			<li data-target="#meuBanner" data-slide-to="1"></li>
+			<li data-target="#meuBanner" data-slide-to="2"></li>
+		</ol>
+		<!-- FIM DOS INDICADORES -->
+
+		<!-- CONTROLES -->
+		<a href="#meuBanner" data-slide="prev" class="carousel-control-prev controles">
+			<img  src="https://image.flaticon.com/icons/png/512/271/271220.png"  />
+		</a>
+		<a href="#meuBanner" data-slide="next" class="carousel-control-next controles">
+			<img  src="https://image.flaticon.com/icons/png/512/271/271228.png" />
+		</a>
+		<!-- FIM DOS CONTROLES -->
+
+	</div>
 
 	<!-- FIM DO BANNER --------------------->
 
@@ -29,158 +80,45 @@
 
 		<!-- INÍCIO Da VITRINE --------------------->
 		<!---------------------------------------------------------------------------------------------------------------------->
-		<div class="row filmeEmDestaque">
+		<div class="row produtoEmDestaque">
 			
-			<div class="col-md-6 col-lg-4 col-sm-6 text-center">
-				<div class="card">
-					<img src="imagens/Produtos/filme-1.jpg" alt="..." class="card-img-top">
-					<div class="card-body">
-						<h3 class="card-title">Nome do filme</h3>
-						<p class="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</p>
-						<a href="#" class="btn btn-primary stretched-link">Ver mais sobre o filme</a>
+			<?php
+				$destaques = array(8,1,6,7,10,3);
+				for ($i=0; $i < count($destaques); $i++) {
+					$imagem = $destaques[$i];
+					$j = 0;
+					while ($j < count($produtos)) {
+						if ($produtos[$j] == $destaques[$i]) {
+							$rotulo = $produtos[$j+1];
+							$descricao = $produtos[$j+2];
+							$j = 50; /* sair do while */
+						}else{
+							$j++;
+						}
+					}
+					?>
+					
+					<div class="col-md-6 col-lg-4 col-sm-6 text-center">
+						<div class="card">
+							<img src="images/Produtos/<?php echo $imagem; ?>.jpg" class="card-img-top">
+							<div class="card-body">
+								<h3 class="card-title"><?php echo $rotulo; ?></h3>
+								<p class="card-text">
+									<?php echo substr($descricao, 0, 99)."..."; ?>
+								</p>
+								<a href="pages/item.php?produto=<?php echo $imagem; ?>" class="btn btn-primary stretched-link">Ver mais...</a>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 
-			<div class="col-md-6 col-lg-4 col-sm-6 text-center">
-				<div class="card">
-					<img src="imagens/Produtos/filme-2.jpg" alt="..." class="card-img-top">
-					<div class="card-body">
-						<h3 class="card-title">Nome do filme</h3>
-						<p class="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</p>
-						<a href="#" class="btn btn-primary stretched-link">Ver mais sobre o filme</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-6 col-lg-4 col-sm-6 text-center">
-				<div class="card">
-					<img src="imagens/Produtos/filme-3.jpg" alt="..." class="card-img-top">
-					<div class="card-body">
-						<h3 class="card-title">Nome do filme</h3>
-						<p class="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</p>
-						<a href="#" class="btn btn-primary stretched-link">Ver mais sobre o filme</a>
-					</div>
-				</div>
-			</div>
+				<?php
+				}
+			?>
 
 		</div>
 
 		<!-- FIM DA VITRINE --------------------->
 		<!---------------------------------------------------------------------------------------------------------------------->
-
-
-		<!-- INÍCIO DO PRODUTOS POPULARES --------------------->
-
-		<hr>
-		<h2 class="text-center">Produtos mais buscados</h2>
-		<div class="row">
-			
-			<div class="col-lg-4 col-md-6 atoresPopulares card mb-3">
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<img src="imagens/atores/ator-1.jpg" alt="..." class="rounded w-100">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h3 class="card-title">Nome do(a) ator/atriz</h3>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
-						</div>
-					</div>
-					<a href="#" class="btn btn-info w-100 stretched-link">Saiba Mais...</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 atoresPopulares card mb-3">
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<img src="imagens/atores/ator-2.jpg" alt="..." class="rounded w-100">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h3 class="card-title">Nome do(a) ator/atriz</h3>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
-						</div>
-					</div>
-					<a href="#" class="btn btn-info w-100 stretched-link">Saiba Mais...</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 atoresPopulares card mb-3">
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<img src="imagens/atores/ator-3.jpg" alt="..." class="rounded w-100">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h3 class="card-title">Nome do(a) ator/atriz</h3>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
-						</div>
-					</div>
-					<a href="#" class="btn btn-info w-100 stretched-link">Saiba Mais...</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 atoresPopulares card mb-3">
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<img src="imagens/atores/ator-4.jpg" alt="..." class="rounded w-100">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h3 class="card-title">Nome do(a) ator/atriz</h3>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
-						</div>
-					</div>
-					<a href="#" class="btn btn-info w-100 stretched-link">Saiba Mais...</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 atoresPopulares card mb-3">
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<img src="imagens/atores/ator-5.jpg" alt="..." class="rounded w-100">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h3 class="card-title">Nome do(a) ator/atriz</h3>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
-						</div>
-					</div>
-					<a href="#" class="btn btn-info w-100 stretched-link">Saiba Mais...</a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 atoresPopulares card mb-3">
-				<div class="row no-gutters">
-					<div class="col-md-4">
-						<img src="imagens/atores/ator-6.jpg" alt="..." class="rounded w-100">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h3 class="card-title">Nome do(a) ator/atriz</h3>
-							<p class="card-text">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
-						</div>
-					</div>
-					<a href="#" class="btn btn-info w-100 stretched-link">Saiba Mais...</a>
-				</div>
-			</div>
-
-
-		</div>
 
 
 		<!-- ------------------------------------------------------------------------------------------------------------------>
@@ -191,7 +129,26 @@
 
 	<!-- RODAPÉ --------------------->
 	
-	<?php include_once "rodape.html"; ?>
+	<hr>
+	<footer>
+		<div class="row">
+			<div class="faleConosco text-center col-md-6">
+				<h3>Fale Conosco:</h3>
+				<a href="mailto:contato@email.com.br">contato@email.com.br</a>
+				<p>(99) 99999-9999 </p>
+			</div>
+			<div class="text-center col-md-6">
+				<p>
+				Desenvolvido por: <strong>
+				Jefferson da Silva Rodrigues</strong><br>
+				RA: 20136643-5 <br>
+				SUPERIOR DE TECNOLOGIA EM SISTEMAS PARA INTERNET<br>
+				Unicesumar<br>
+				Disciplina: PROGRAMAÇÃO BACK END I - 53/2021
+				</p>
+			</div>
+		</div>
+	</footer>
 
 	<!-- FIM DO RODAPÉ --------------------->
 
