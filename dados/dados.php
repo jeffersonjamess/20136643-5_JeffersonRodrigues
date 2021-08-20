@@ -90,14 +90,15 @@ O mamão possui grande quantidade de beta-caroteno, substância responsável pel
 	$produtos[43] = 700;
 
 
-	$produtos[40] = 11;
-	$produtos[41] = "Figada de Corte na Caixa de Madeira";
-	$produtos[42] = "A Doces Gigante foi fundada em 1919 e possui 100 anos de tradição na cidade de Santa Rita de Caldas.
+	$produtos[44] = 11;
+	$produtos[45] = "Figada de Corte na Caixa de Madeira";
+	$produtos[46] = "A Doces Gigante foi fundada em 1919 e possui 100 anos de tradição na cidade de Santa Rita de Caldas.
 
 A Figada de Corte na Caixa de madeira é a cara de Minas, deliciosa e macia. 
 
 A fruta é usada 'in natura' e não sofre nenhum tipo de padronização, sendo bem natural e, por isso, podendo sofrer pequenas alterações na cor e na textura do doce, dependendo da época da colheita.
 
 ";
-	$produtos[43] = 800;
+	$produtos[47] = 800;
+
 ?>

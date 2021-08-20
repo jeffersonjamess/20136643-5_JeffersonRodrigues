@@ -5,7 +5,7 @@
 		include_once "header.html";
 	?>
 
-	<title>Diretores</title>
+	<title>Quem somos</title>
 	
 </head>
 <body>

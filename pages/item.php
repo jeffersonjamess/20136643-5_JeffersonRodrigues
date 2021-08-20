@@ -6,7 +6,13 @@
 		include_once "../dados/dados.php";
 		include_once "../function/funcoes.php";
 	?>
-	<title>Filmes</title>
+	<title>
+		<?php
+		if (isset($_GET['produto'])) {
+			echo retornaRotulo($_GET['produto']);
+		}
+		?>
+	</title>
 	
 </head>
 <body>

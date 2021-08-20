@@ -13,17 +13,6 @@
 /*-- FIM DA VITRINE DE PRODUTOS ---------------------*/
 
 /* RODAPÉ */
-
-.redesSociais{
-	font-size: 80px;
-}
-.redesSociais a{
-	color: black;
-}
-.redesSociais a:hover{
-	color: red;
-}
-
 .faleConosco p{
 	font-size: 18px;
 }
@@ -76,11 +65,17 @@
 }
 .itensCadastrados:hover{
 	background: #ededed;
+	color: red;
+}
+.itensCadastrados a:hover{
+	color: red;
+}
+.itensCadastrados label:hover{
+	cursor: pointer;
 }
 
-
 .controles img{
-	max-width: 100px;
+	max-width: 24px;
 }
 
 .descricao{

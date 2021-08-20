@@ -5,9 +5,9 @@
 		for ($i=0; $i < count($produtos); $i++) { 
 			if ($produtos[$i] == $codigo) {
 				$rotulo = $produtos[$i+1];
+				return $rotulo;
 			}
 		}
-		return $rotulo;
 	}
 
 	function retornaDescricao($codigo){
@@ -16,9 +16,9 @@
 		for ($i=0; $i < count($produtos); $i++) { 
 			if ($produtos[$i] == $codigo) {
 				$descricao = $produtos[$i+2];
+				return $descricao;
 			}
 		}
-		return $descricao;
 	}
 
 	function retornaPeso($codigo){
@@ -27,9 +27,9 @@
 		for ($i=0; $i < count($produtos); $i++) { 
 			if ($produtos[$i] == $codigo) {
 				$peso = $produtos[$i+3];
+				return $peso;
 			}
 		}
-		return $peso;
 	}
 	
 ?>

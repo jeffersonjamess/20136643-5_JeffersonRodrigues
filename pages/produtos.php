@@ -6,7 +6,7 @@
 		include_once "../dados/dados.php";
 		include_once "../function/funcoes.php";
 	?>
-	<title>Filmes</title>
+	<title>Produtos</title>
 	
 </head>
 <body>
@@ -35,15 +35,20 @@
 		<div class="row">
 			
 		<?php
-			for ($i=0; $i <= count($produtos)/4; $i++) {
+			for ($i=0; $i < count($produtos)/4; $i++) {
 				?>
-				<div class="col-md-4">
-				<?php
-					echo $i."<br>";
-					$rotulo = retornaRotulo($i);
-					$descricao = retornaDescricao($i);
-					echo $rotulo."<br>";
-				?>
+				<div class="col-md-4 col-sm-12 col-lg-4 text-center itensCadastrados">
+					<a href="item.php?produto=<?php echo $i; ?>">
+						<img src="../images/produtos/<?php echo $i; ?>.jpg" class="img-fluid img-thumbnail" />
+						<br>
+						<label class="h4">
+						<?php
+							$rotulo = retornaRotulo($i);
+							echo $rotulo;
+						?>
+						</label>
+						<br><br>
+					</a>
 				</div>
 				<?php
 			}
