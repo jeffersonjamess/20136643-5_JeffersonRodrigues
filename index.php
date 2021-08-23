@@ -38,17 +38,17 @@
 	<div id="meuBanner" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<a href="#">
+				<a href="pages/item.php?produto=5">
 					<img src="images/banner/1.jpg" class="d-block w-100" alt="Banner de boas-vindas">
 				</a>
 			</div>
 			<div class="carousel-item">
-				<a href="#">
+				<a href="pages/item.php?produto=0">
 					<img src="images/banner/2.jpg" class="d-block w-100" alt="Banner de boas-vindas">
 				</a>
 			</div>
 			<div class="carousel-item">
-				<a href="#">
+				<a href="pages/item.php?produto=8">
 					<img src="images/banner/3.jpg" class="d-block w-100" alt="Banner de boas-vindas">
 				</a>
 			</div>

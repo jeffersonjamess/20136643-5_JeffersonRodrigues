@@ -48,7 +48,11 @@
 					<img src="../images/produtos/<?php echo $codigo.'.jpg'; ?>" class="img-fluid img-thumbnail">
 				</div>
 				<div class="col-md-7">
-					<p class="text-justify descricao"><?php echo $descricao; ?></p>
+					<p class="text-justify descricao">
+						<?php echo $descricao; ?><br><br><br>
+						<?php echo "Peso do produto: ".$peso." gramas"; ?>
+					</p>
+
 				</div>
 			</div>
 		<?php

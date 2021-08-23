@@ -22,41 +22,6 @@
 /* FIM DO RODAPÉ */
 
 
-/* ---------  MENU LATERAL ADM  ------------- */
-
-.menuAdm{
-	width: 100%;
-	text-align: right;
-	background-color: black;
-	padding: 0;
-}
-.menuAdm a{
-	text-decoration: none;
-	font-size: 20px;
-	color: white;
-	width: 100%;
-}
-.menuAdm li{
-	list-style: none;
-	padding: 12px;
-	padding-right: 25px;
-	border-bottom: 2px solid gray;
-}
-.menuAdm li:hover{
-	border-bottom: 2px solid red;
-	background-color: #333;
-}
-.menuAdm li a{
-	display: block;
-}
-.menuAdm li a:hover{
-	color: orange;
-}
-.menuAdm i{
-	padding-left: 20px;
-	font-size: 24px;
-}
-
 /*  ---------------- ITENS -------------------- */
 .itensCadastrados{
 	border: 2px solid lightgray;
@@ -80,4 +45,16 @@
 
 .descricao{
 	font-size: 24px;
+}
+
+
+
+/*  ---------------- Quem Somos -------------------- */
+@media (max-width: 767px){
+	.quemSomos img{
+		display: none;
+	}
+}
+.quemSomos img{
+	max-width: 180px;
 }
