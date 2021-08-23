@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html">
+	<meta http-equiv="X-UA-Compabible" content="IE=edge,chrome=1">
+	<meta name="keyword" content="filmes, biblioteca, atores, diretores, cinema, diversão, filmografia">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- JQUERY -->
+	<script src="js/jquery-3.5.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	 
+	<!-- ESTILO -->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<?php
-		include_once "header.html";
 		include_once "dados/dados.php";
 	?>
 
